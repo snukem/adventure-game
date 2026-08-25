@@ -25,7 +25,10 @@ def test_location_create_then_get(capsys):
 
 
 def test_location_create_with_exit_and_loot(capsys):
-    run(capsys, "item", "create", "--id", "sword", "--name", "Sword")
+    run(
+        capsys, "item", "create", "--id", "sword", "--name", "Sword",
+        "--type", "Iron", "--category", "Weapon", "--rarity", "Common",
+    )
     exit_code, out, _ = run(
         capsys,
         "location",
@@ -110,11 +113,23 @@ def test_location_create_rejects_coordinate_collision(capsys):
 
 
 def test_item_create_then_list(capsys):
-    run(capsys, "item", "create", "--id", "sword", "--name", "Sword", "--value", "5", "--tag", "weapon")
+    run(
+        capsys, "item", "create", "--id", "sword", "--name", "Sword",
+        "--type", "Iron", "--category", "Weapon", "--rarity", "Common", "--value", "5",
+    )
     exit_code, out, _ = run(capsys, "item", "list")
     data = json.loads(out)
     assert data["sword"]["value"] == 5.0
-    assert data["sword"]["tags"] == ["weapon"]
+    assert data["sword"]["type"] == "Iron"
+
+
+def test_item_create_unique_without_owner_returns_error_exit_code(capsys):
+    exit_code, _, err = run(
+        capsys, "item", "create", "--id", "sword", "--name", "Sword",
+        "--type", "Ethereal", "--category", "Weapon", "--rarity", "Unique",
+    )
+    assert exit_code == 1
+    assert "error:" in err
 
 
 def test_npc_create_defaults_to_friendly(capsys):

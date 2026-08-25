@@ -12,9 +12,21 @@ Data lives in data/world.json:
     }
   },
   "items": {
-    "<id>": {"name": str, "description": str, "value": int, "tags": [str]}
+    "<id>": {
+      "name": str, "description": str,
+      "type": str, "category": str, "rarity": str,
+      "value": int | float, "weight": int | float,
+      "owner": str | null
+    }
   }
 }
+
+Every item carries type/category/rarity -- there's no default for those, they must
+be given explicitly. "owner" is the only field allowed to be null: it defaults to
+null (unowned) for everything except Unique-rarity items, which must be created
+with an explicit owner. The catalog only stores who currently owns an item as
+authored; reassigning it when a player picks something up is the game engine's
+job, not this module's.
 
 x/y are the single global coordinate system -- there's no separate local
 grid to keep in sync. A multi-tile place like a courtyard is several
@@ -41,6 +53,10 @@ from .storage import DATA_DIR, ValidationError, load_json, save_json
 WORLD_PATH = DATA_DIR / "world.json"
 
 VALID_DIRECTIONS = {"north", "south", "east", "west", "up", "down", "in", "out"}
+
+VALID_ITEM_CATEGORIES = {"Weapon", "Armor", "Clothing", "Jewelry", "Food", "Drink", "Tool"}
+
+VALID_RARITIES = {"Common", "Uncommon", "Rare", "Unique"}
 
 
 def _empty_world() -> dict[str, Any]:
@@ -99,10 +115,25 @@ def _validate_item(item_id: str, item: dict[str, Any]) -> None:
         raise ValidationError("Item id must be a non-empty string.")
     if "name" not in item or not isinstance(item["name"], str) or not item["name"]:
         raise ValidationError(f"Item '{item_id}' requires a non-empty 'name'.")
+    if "type" not in item or not isinstance(item["type"], str) or not item["type"]:
+        raise ValidationError(f"Item '{item_id}' requires a non-empty 'type'.")
+    if item.get("category") not in VALID_ITEM_CATEGORIES:
+        raise ValidationError(
+            f"Item '{item_id}' field 'category' must be one of {sorted(VALID_ITEM_CATEGORIES)}."
+        )
+    if item.get("rarity") not in VALID_RARITIES:
+        raise ValidationError(
+            f"Item '{item_id}' field 'rarity' must be one of {sorted(VALID_RARITIES)}."
+        )
+    owner = item.get("owner")
+    if owner is not None and not isinstance(owner, str):
+        raise ValidationError(f"Item '{item_id}' field 'owner' must be a string or null.")
+    if item["rarity"] == "Unique" and owner is None:
+        raise ValidationError(f"Item '{item_id}' is Unique and requires a non-null 'owner'.")
     if "value" in item and item["value"] is not None and not isinstance(item["value"], (int, float)):
         raise ValidationError(f"Item '{item_id}' field 'value' must be numeric.")
-    if "tags" in item and not isinstance(item["tags"], list):
-        raise ValidationError(f"Item '{item_id}' field 'tags' must be a list.")
+    if "weight" in item and item["weight"] is not None and not isinstance(item["weight"], (int, float)):
+        raise ValidationError(f"Item '{item_id}' field 'weight' must be numeric.")
 
 
 def _check_coordinate_collision(data: dict[str, Any], loc_id: str, x: int | None, y: int | None) -> None:
@@ -212,14 +243,27 @@ def list_locations_by_area(area: str) -> dict[str, Any]:
 def create_item(
     item_id: str,
     name: str,
-    description: str = "",
+    type: str,
+    category: str,
+    rarity: str,
     value: float = 0,
-    tags: list[str] | None = None,
+    weight: float = 0,
+    owner: str | None = None,
+    description: str = "",
 ) -> Warnings:
     data = _load()
     if item_id in data["items"]:
         raise ValidationError(f"Item '{item_id}' already exists. Use update_item instead.")
-    item = {"name": name, "description": description, "value": value, "tags": tags or []}
+    item = {
+        "name": name,
+        "description": description,
+        "type": type,
+        "category": category,
+        "rarity": rarity,
+        "value": value,
+        "weight": weight,
+        "owner": owner,
+    }
     _validate_item(item_id, item)
     data["items"][item_id] = item
     _save(data)

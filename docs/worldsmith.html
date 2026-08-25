@@ -1,0 +1,1030 @@
+<!doctype html><html><head><!-- frame-runtime --><base href="/_f/1787633307-bd26/"><script>window.__FRAME_PREAMBLE={"capabilities":{"artifact":"artifact.oqIe8shs.js","assets":"assets.DBUJcvq_.js","comments":"comments.GLuHR3zP.js","db":"db.CRhVHzSt.js","downloads":"downloads.C3GSvEDP.js","embed":"embed.CZsbekoQ.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.DE7EMui-.js","sample":"sample.BW2Uysoh.js","self":"artifact.oqIe8shs.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.Dj21_51u.js","comments":"_comments.BOgkE6qU.js","translate":"_translate.5HCW4BJh.js"}</script><script>(function(){"use strict";var Y=["light","dark","system"],X=/^[A-Za-z0-9_-]{1,64}$/,D=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,G=new Set(["class","hidden","value","checked"]);function V(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||G.has(t)}var be="http://www.w3.org/1999/xhtml",Z="http://www.w3.org/2000/svg",J=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),Q=new Set(["script","style"]);function ee(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!J.has(t):e.namespaceURI===Z?!Q.has(t):!1}var te=new Set(["html","head","body","frameset"]);function re(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&te.has(e.localName)}function ne(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!X.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[n,s]of Object.entries(t.attrsSet))if(!D.test(n)||typeof s!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const n of t.attrsRemoved)if(typeof n!="string"||!D.test(n))return!1}return!0}function se(e,t){if(e===null||typeof e!="object")return!1;const{seq:n,elements:s}=e;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(s)||s.length===0||s.length>64)return!1;for(let o=0;o<s.length;o++)if(!t(s[o]))return!1;return!0}function ae(e){return e===null||typeof e!="object"?!1:se(e.__frame_patch,ne)}function oe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function ie(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function le(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&Y.includes(n)}var O="__frame_scroll",ce=150,ue=310,fe=160,pe=3e4;function de(){let e=0,t=!1,n=!1,s=!1,o=0,l=null;const c=i=>{try{sessionStorage.setItem(O,JSON.stringify({y:i}))}catch{}},f=()=>{if(clearTimeout(e),l===null)return;const i=l;l=null,c(i)},S=()=>{if(t){t=!1;return}n=!0,l=scrollY,clearTimeout(e),e=setTimeout(f,ce)};try{addEventListener("scroll",S,{passive:!0}),addEventListener("pagehide",f)}catch{}const v=()=>{let i;try{i=sessionStorage.getItem(O)}catch{return null}if(i===null)return null;let d;try{d=JSON.parse(i)}catch{d=null}const u=d?.y;if(!(typeof u=="number"&&Number.isFinite(u)&&u>=0)){try{sessionStorage.removeItem(O)}catch{}return null}return u};let b=!1;const m=i=>{try{const d=scrollY;scrollTo({top:i,left:0,behavior:"instant"}),o=i,s=!0,clearTimeout(e),l=null,c(i);const u=scrollY;u!==d&&(t=!0),u!==i&&!b&&(b=!0,addEventListener("load",()=>{try{if(scrollY===u){const h=v();m(h!==null?h:o)}}catch{}},{once:!0}))}catch{}},y=()=>{try{return!!location.hash}catch{return!0}};let g=!1;const E=()=>{try{if(g||innerWidth>ue||innerHeight>fe)return;g=!0;const i=Date.now(),d=()=>{try{removeEventListener("resize",d)}catch{}if(Date.now()-i>pe||n||y())return;const u=v();m(u!==null?u:o)};addEventListener("resize",d)}catch{}};let r=!1,p=!1;return{restore(){if(r||(r=!0,y()))return;const i=v();i!==null&&(m(i),E())},promoted(){if(p||(p=!0,y()))return;const i=v();i!==null?(m(i),E()):s&&m(o)}}}var Ee="modulepreload",Ae=function(e){return"/"+e},Re={},me=function(t,n,s){let o=Promise.resolve();function l(c){const f=new Event("vite:preloadError",{cancelable:!0});if(f.payload=c,window.dispatchEvent(f),!f.defaultPrevented)throw c}return o.then(c=>{for(const f of c||[])f.status==="rejected"&&l(f.reason);return t().catch(l)})};(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let s=0;for(let o=0;o<n.length;o++){const l=n[o];try{e(t,l,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[l]}catch{}try{e(t,l,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[l]=="function"&&s++}if(s&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:s},"*")}catch{}})();var he=1e4,_e=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function F(e){for(const t of _e)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var M=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),j=window.__FRAME_PREAMBLE?.transforms,N=window.__FRAME_PREAMBLE?.comments,I=window.__FRAME_PREAMBLE?.translate,L=/^[\w.-]+\.js$/;function T(e){return me(()=>import("/_runtime/"+e),void 0)}function z(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:W,pipe:()=>({wrap:(n,s)=>(...o)=>{try{return s(...o)}catch(l){return Promise.reject(l)}}})}}var P=null,w=null;function q(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var B=!1;function ve(e,t){const n=[];for(const s of e.elements){const o=document.querySelector(`[data-id="${s.target}"]`);if(!o){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(s.attrsSet??{}),...s.attrsRemoved??[]].some(l=>!V(l))){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}if(s.text!==void 0&&(!ee(o)||re(o))){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}for(const[l,c]of Object.entries(s.attrsSet??{}))if(!$(o,l)){try{o.setAttribute(l,c)}catch{}H(o,l,c)}for(const l of s.attrsRemoved??[])$(o,l)||(o.removeAttribute(l),H(o,l,null));typeof s.text=="string"&&(o.textContent=s.text),n.push(s.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function H(e,t,n){if(!(e instanceof HTMLInputElement))return;const s=t.toLowerCase();s==="checked"?e.checked=n!==null:s==="value"&&e.type!=="file"&&(e.value=n??"")}function $(e,t){const n=t.toLowerCase(),s=e;return n==="data-id"||(n==="value"||n==="checked")&&(s.__artifactSecret===!0||/^(password|hidden|file)$/.test(s.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${s.autocomplete??""}`))}function K(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,B=!0):B&&(delete t.dataset.theme,t.style.colorScheme="",B=!1)}var R=new Map;function ye(){let e;const t={u:new Promise(n=>{e=n}),r:n=>{t.done=!0,e(n)},done:!1,nulled:!1};return t}var ge=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),W=(e,t)=>{const n=R.get(e);if(!n||n.done){n?.nulled&&w&&parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},w);return}const s=typeof t=="function"?Object.setPrototypeOf(t,ge):Object.assign(Object.create(null),t);typeof s.then=="function"&&delete s.then,n.r(Object.freeze(s))},U=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(U&&U.writable===!1)){const e=j&&L.test(j)?T(j).catch(()=>{}):Promise.resolve(void 0),t=r=>{if(r.type==="auxclick"&&r.button!==1)return;const p=r.target,i=p&&p.closest?p.closest("a[href],area[href]"):null;if(!i)return;const d=i.getAttribute("href");if(!d)return;let u,h;try{u=new URL(d,document.baseURI),h=new URL(document.baseURI).origin}catch{return}if((u.protocol==="http:"||u.protocol==="https:")&&u.origin!==h){r.preventDefault();const _=(i.getAttribute("target")??"").toLowerCase(),C=r.type==="auxclick"||r.metaKey||r.ctrlKey||r.shiftKey||r.altKey||!["","_self","_top","_parent"].includes(_);parent.postMessage({__frame_nav:!0,url:u.href,newTab:C},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const n={},s=r=>{r.isTrusted&&(n.pointer=!0)},o=r=>{r.isTrusted&&(n.click=!0)};addEventListener("pointermove",s,{capture:!0,passive:!0}),addEventListener("click",o,{capture:!0,passive:!0}),e.then(r=>{r?.wireNav&&(r.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",s,!0),removeEventListener("click",o,!0),r.wireEngagement?.(n))});let l=null;try{l=de()}catch{}const c=U?.value??{};q(window,"claude",c);for(const r of Object.keys(M)){if(c[r]!==void 0){q(c,r,c[r]);continue}R.set(r,ye())}if(c.use===void 0){const r=p=>{if(typeof p!="string"||!Object.hasOwn(M,p))return Promise.resolve(null);const i=R.get(p);return i?i.u:Promise.resolve(c[p]??null)};try{Object.defineProperty(c,"use",{value:r,writable:!0,configurable:!0,enumerable:!1})}catch{}}let f=null,S=null,v=0;const b=r=>{r.source!==parent||!F(r.origin)||oe(r.data)&&(f=r.data.__frame_init,w=r.origin,removeEventListener("message",b),clearTimeout(v),S?.())};addEventListener("message",b),parent.postMessage({__frame_connect:!0},"*");const m=new Promise(r=>{S=r,v=setTimeout(()=>{removeEventListener("message",b),r()},he)}),y=document.readyState==="loading"?new Promise(r=>document.addEventListener("DOMContentLoaded",()=>r(),{once:!0})):Promise.resolve();y.then(()=>{try{l?.restore()}catch{}});const g={cb:null},E=r=>{if(!(r.source!==parent||!F(r.origin))&&ie(r.data)){try{l?.promoted()}catch{}g.cb?.()}};addEventListener("message",E),m.then(async()=>{if(!f||!w){for(const a of R.values())a.nulled=!0,a.r(null);return}K(f.theme);const r=w;let p=!1,i=!1;addEventListener("message",a=>{if(a.source!==parent||a.origin!==r)return;le(a.data)&&K(a.data.__frame_theme.theme),ae(a.data)&&ve(a.data.__frame_patch,r);const k=a.data?.__fc_mode;k&&typeof k=="object"&&!p&&N&&L.test(N)&&(p=!0,T(N).then(x=>x.install?.(r,k.on===!0)).catch(()=>{}));const A=a.data?.__ft_cmd;A&&typeof A=="object"&&!i&&I&&L.test(I)&&(i=!0,T(I).then(x=>x.install?.(r,A)).catch(()=>{}))});const d=Object.keys(f.capabilities??{}).filter(a=>Object.hasOwn(M,a)).map(a=>[a,M[a]]).filter(a=>typeof a[1]=="string"&&L.test(a[1])),u=await Promise.allSettled(d.map(([,a])=>T(a))),h=await e,_=w;if(h?.buildBoot||parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},_),h?.buildBoot)try{P=h.buildBoot(f,h.TRANSFORMS??{},{shellOrigin:_,mount:W},a=>parent.postMessage({__frame_cap_telemetry:a},_))}catch{parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},_),P=z(f,_)}else P=z(f,_);const C=a=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:a}},_),we=P;u.forEach((a,k)=>{const A=d[k][0];if(a.status!=="fulfilled"){C(A);return}try{a.value?.install?.(we)}catch{C(A)}});for(const a of R.values())a.done||(a.nulled=!0,a.r(null));await y,parent.postMessage({__frame_ready:!0},w),e.then(a=>a?.installSizeReporter?.(_,g))})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Worldsmith</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #EDEEE6;
+    --surface: #E3E3D6;
+    --surface-2: #DAD9C9;
+    --ink: #1B2420;
+    --ink-soft: #57635A;
+    --moss: #3A6350;
+    --moss-strong: #2C4E3E;
+    --amber: #B06A22;
+    --teal: #256268;
+    --line: #C9C8B9;
+    --code-bg: #E7E7DA;
+    --shadow: rgba(27, 36, 32, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12160F;
+      --surface: #191E17;
+      --surface-2: #202620;
+      --ink: #E9E9DD;
+      --ink-soft: #97A493;
+      --moss: #7FB595;
+      --moss-strong: #9CCBAE;
+      --amber: #E3A25C;
+      --teal: #74C3C9;
+      --line: #2E352B;
+      --code-bg: #14180F;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #12160F;
+    --surface: #191E17;
+    --surface-2: #202620;
+    --ink: #E9E9DD;
+    --ink-soft: #97A493;
+    --moss: #7FB595;
+    --moss-strong: #9CCBAE;
+    --amber: #E3A25C;
+    --teal: #74C3C9;
+    --line: #2E352B;
+    --code-bg: #14180F;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+  ::selection { background: var(--moss); color: var(--paper); }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  body {
+    margin: 0;
+    font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--moss-strong); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  h1, h2, h3, h4 { font-family: "Fraunces", Georgia, serif; text-wrap: balance; margin: 0; color: var(--ink); }
+
+  code, pre, .mono {
+    font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+
+  /* ---------- background texture: a faint tile grid ---------- */
+  .masthead {
+    position: relative;
+    padding: 4.5rem 2rem 3.25rem;
+    background-image:
+      radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 1.4px);
+    background-size: 28px 28px;
+    background-position: center top;
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--paper) 0%, transparent 55%, var(--paper) 100%);
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss-strong);
+    margin-bottom: 1rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.6em;
+    height: 1px;
+    background: currentColor;
+    display: inline-block;
+  }
+  h1.title {
+    font-size: clamp(2.1rem, 4vw, 3.1rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .lede {
+    margin-top: 1.1rem;
+    max-width: 62ch;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+  }
+  .lede code { color: var(--ink); background: var(--surface); padding: 0.05em 0.4em; border-radius: 3px; font-size: 0.88em; }
+
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+  }
+  .chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    padding: 0.38em 0.75em;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .chip:hover { color: var(--moss-strong); border-color: var(--moss-strong); }
+
+  /* ---------- layout ---------- */
+  .layout {
+    display: grid;
+    grid-template-columns: 232px minmax(0, 1fr);
+    gap: 3rem;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+    align-items: start;
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.86rem;
+    align-self: start;
+  }
+  nav.toc .toc-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+  }
+  nav.toc a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 0.32rem 0 0.32rem 0.75rem;
+    border-left: 1px solid var(--line);
+  }
+  nav.toc a:hover { color: var(--ink); border-left-color: var(--moss-strong); }
+
+  main { min-width: 0; display: flex; flex-direction: column; gap: 4.5rem; }
+
+  section { scroll-margin-top: 1.5rem; max-width: 720px; }
+  section > .eyebrow { margin-bottom: 0.75rem; }
+  section h2 { font-size: 1.65rem; font-weight: 600; }
+  section .section-intro { margin-top: 0.85rem; color: var(--ink-soft); max-width: 66ch; }
+
+  p { margin: 0.9rem 0 0; max-width: 68ch; }
+  section > p:first-of-type { margin-top: 0.85rem; }
+
+  h3.fn-group-title {
+    margin-top: 2.25rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  /* ---------- function signature card ---------- */
+  .fn {
+    margin-top: 1.5rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .fn-sig {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.86rem;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+    white-space: pre;
+    color: var(--moss-strong);
+  }
+  .fn-sig .arg { color: var(--ink); }
+  .fn-body { padding: 1.1rem 1.1rem 1.3rem; }
+  .fn-body > p:first-child { margin-top: 0; }
+
+  table.params {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.88rem;
+  }
+  table.params th {
+    text-align: left;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+    padding: 0 0.6rem 0.5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  table.params td {
+    padding: 0.55rem 0.6rem 0.55rem 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.params tr:last-child td { border-bottom: none; }
+  table.params td.pname { font-family: "IBM Plex Mono", monospace; color: var(--ink); white-space: nowrap; }
+  table.params td.ptype { font-family: "IBM Plex Mono", monospace; color: var(--teal); white-space: nowrap; }
+  .tbl-scroll { overflow-x: auto; }
+
+  .returns-line, .raises-line {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  .returns-line .tag, .raises-line .tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-right: 0.6em;
+  }
+  .raises-line .tag { color: var(--amber); }
+
+  /* ---------- compact regular-shape function list ---------- */
+  ul.fn-list {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  ul.fn-list li {
+    display: grid;
+    grid-template-columns: minmax(200px, 280px) 1fr;
+    gap: 1rem;
+    padding: 0.6rem 0.85rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    font-size: 0.87rem;
+    align-items: baseline;
+  }
+  ul.fn-list code { color: var(--moss-strong); font-size: 0.85rem; }
+  ul.fn-list span.desc { color: var(--ink-soft); }
+
+  /* ---------- field-note callout (no rounded card, no accent rail) ---------- */
+  .note {
+    position: relative;
+    margin-top: 1.5rem;
+    border: 1px solid var(--line);
+    padding: 1.1rem 1.2rem 1.2rem;
+    background: var(--paper);
+  }
+  .note .note-tag {
+    position: absolute;
+    top: -0.65em;
+    left: 0.9rem;
+    background: var(--paper);
+    padding: 0 0.5em;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .note.safety .note-tag { color: var(--moss-strong); }
+  .note p { margin-top: 0.5rem; }
+  .note p:first-of-type { margin-top: 0; }
+  .note ul { margin: 0.6rem 0 0; padding-left: 1.15rem; }
+  .note li { margin-top: 0.3rem; }
+  .note code { font-size: 0.87em; }
+
+  /* ---------- code blocks ---------- */
+  .code-block {
+    margin-top: 1.25rem;
+    border: 1px solid var(--line);
+    background: var(--code-bg);
+  }
+  .code-block .code-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 0.5rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .code-block pre {
+    margin: 0;
+    padding: 1rem 1.1rem 1.15rem;
+    overflow-x: auto;
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+  .code-block code { color: var(--ink); }
+
+  .tok-comment { color: var(--ink-soft); font-style: italic; }
+  .tok-string { color: var(--moss-strong); }
+  .tok-keyword { color: var(--amber); }
+  .tok-number { color: var(--teal); }
+  .tok-func { color: var(--teal); }
+  .tok-key { color: var(--teal); }
+  .tok-flag { color: var(--amber); }
+  .tok-cmd { color: var(--moss-strong); font-weight: 600; }
+
+  .two-up {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 760px) {
+    .two-up { grid-template-columns: 1fr 1fr; }
+  }
+  .two-up .code-block { margin-top: 0; }
+
+  .step {
+    margin-top: 2.25rem;
+    padding-top: 2.25rem;
+    border-top: 1px solid var(--line);
+  }
+  .step:first-of-type { margin-top: 1.75rem; padding-top: 0; border-top: none; }
+  .step-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .step-head .step-mark {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--amber);
+    white-space: nowrap;
+  }
+  .step-head h4 { font-size: 1.08rem; font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 2rem;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+  footer .mono { color: var(--ink-soft); }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; padding: 2rem 1.25rem 4rem; gap: 2rem; }
+    nav.toc {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    nav.toc .toc-label { display: none; }
+    nav.toc a { border-left: none; border: 1px solid var(--line); padding: 0.3rem 0.65rem; }
+    .masthead { padding: 3rem 1.25rem 2.25rem; }
+    ul.fn-list li { grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">src/utils reference</div>
+    <h1 class="title">Worldsmith</h1>
+    <p class="lede">
+      A field guide to the CRUD toolkit that builds the adventure game's world, NPC, and trigger
+      data — as importable Python functions and as a <code>python -m src.utils.cli</code> command
+      line, with atomic writes and reference validation so the design phase never leaves a corrupt
+      save behind.
+    </p>
+    <div class="chip-row">
+      <a class="chip" href="#storage">storage.py</a>
+      <a class="chip" href="#world">world_data.py</a>
+      <a class="chip" href="#areas">multi-tile areas</a>
+      <a class="chip" href="#npcs">npc_data.py</a>
+      <a class="chip" href="#triggers">trigger_data.py</a>
+      <a class="chip" href="#cli">cli.py</a>
+      <a class="chip" href="#walkthrough">toy example</a>
+      <a class="chip" href="#testing">testing</a>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <a href="#storage">Storage &amp; safety</a>
+    <a href="#world">World: locations &amp; items</a>
+    <a href="#areas">Multi-tile areas</a>
+    <a href="#npcs">NPCs</a>
+    <a href="#triggers">Triggers</a>
+    <a href="#cli">CLI reference</a>
+    <a href="#walkthrough">Toy example: the Sunken Keep</a>
+    <a href="#testing">Testing during development</a>
+  </nav>
+
+  <main>
+
+    <section id="storage">
+      <div class="eyebrow">src/utils/storage.py</div>
+      <h2>Storage &amp; safety</h2>
+      <p class="section-intro">
+        Every other module reads and writes through two functions here. This is the layer that
+        makes "safely" true: a save either lands completely or not at all, and the previous
+        version is never gone for good.
+      </p>
+
+      <div class="note safety">
+        <span class="note-tag">How a save actually happens</span>
+        <p><code>save_json()</code> never writes to the target file directly. It:</p>
+        <ul>
+          <li>copies the current file into <code>data/.backups/</code>, tagged with a timestamp
+            and a monotonic counter so rapid saves don't collide;</li>
+          <li>writes the new content to a temp file in the same directory;</li>
+          <li>calls <code>os.replace()</code> to swap it into place — atomic on POSIX and
+            Windows, so a crash mid-write can't leave a half-written JSON file behind;</li>
+          <li>on any exception, deletes the temp file and re-raises, leaving the original
+            untouched.</li>
+        </ul>
+        <p>Only the last <code>MAX_BACKUPS_PER_FILE</code> (10) backups per file are kept.</p>
+      </div>
+
+      <ul class="fn-list">
+        <li><code>load_json(path, default)</code> <span class="desc">Reads a JSON file, or returns <code>default</code> if it doesn't exist yet.</span></li>
+        <li><code>save_json(path, data)</code> <span class="desc">Backs up the current file, then atomically overwrites it.</span></li>
+        <li><code>ValidationError</code> <span class="desc">Raised by every module below when data fails a structural check before it's saved.</span></li>
+      </ul>
+    </section>
+
+    <section id="world">
+      <div class="eyebrow">src/utils/world_data.py &middot; data/world.json</div>
+      <h2>World: locations &amp; items</h2>
+      <p class="section-intro">
+        The tile map and the loot catalog live in one file, because a location's <code>loot</code>
+        list and its <code>exits</code> map are only meaningful in relation to each other.
+      </p>
+
+      <h3 class="fn-group-title">Locations</h3>
+
+      <div class="fn">
+        <div class="fn-sig">create_location(<span class="arg">location_id, name, description="", x=None, y=None, area=None, exits=None, loot=None</span>)</div>
+        <div class="fn-body">
+          <p>Creates a tile. Fails if <code>location_id</code> is already taken, or if <code>(x, y)</code> is already occupied by another location.</p>
+          <div class="tbl-scroll">
+            <table class="params">
+              <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+              <tr><td class="pname">location_id</td><td class="ptype">str</td><td>Unique key. See <a href="#areas">id convention</a> below for multi-tile places.</td></tr>
+              <tr><td class="pname">name</td><td class="ptype">str</td><td>Required, non-empty.</td></tr>
+              <tr><td class="pname">x, y</td><td class="ptype">int | None</td><td>The single global coordinate system — no separate local grid. No two locations may share the same non-null pair.</td></tr>
+              <tr><td class="pname">area</td><td class="ptype">str | None</td><td>Groups tiles that make up one narrative place, e.g. <code>"castle_courtyard"</code>.</td></tr>
+              <tr><td class="pname">exits</td><td class="ptype">dict[str, str]</td><td>Direction &rarr; target location id. Direction must be one of north/south/east/west/up/down/in/out.</td></tr>
+              <tr><td class="pname">loot</td><td class="ptype">list[str]</td><td>Item ids found here.</td></tr>
+            </table>
+          </div>
+          <p class="returns-line"><span class="tag">Returns</span><code>Warnings</code> &mdash; any exit or loot id that points at something that doesn't exist yet.</p>
+          <p class="raises-line"><span class="tag">Raises</span><code>ValidationError</code> on a duplicate id, a missing name, an unrecognized exit direction, a non-string exit target, a non-string <code>area</code>, or a coordinate collision with an existing location.</p>
+        </div>
+      </div>
+
+      <ul class="fn-list">
+        <li><code>update_location(location_id, **fields)</code> <span class="desc">Merges given fields onto the existing record, then re-validates the result (including the coordinate check).</span></li>
+        <li><code>delete_location(location_id, force=False)</code> <span class="desc">Blocked if another location still exits into this one — pass <code>force=True</code> to delete anyway.</span></li>
+        <li><code>get_location(location_id)</code> <span class="desc">Returns the record, or <code>None</code>.</span></li>
+        <li><code>list_locations()</code> <span class="desc">Returns the full <code>{id: record}</code> dict.</span></li>
+        <li><code>list_locations_by_area(area)</code> <span class="desc">Returns only the locations tagged with that <code>area</code>.</span></li>
+      </ul>
+
+      <h3 class="fn-group-title">Items &amp; loot</h3>
+
+      <div class="fn">
+        <div class="fn-sig">create_item(<span class="arg">item_id, name, type, category, rarity, value=0, weight=0, owner=None, description=""</span>)</div>
+        <div class="fn-body">
+          <p>Adds an entry to the loot catalog. Locations reference items by id — the catalog
+          doesn't know or care which locations carry a given item. <code>type</code>,
+          <code>category</code>, and <code>rarity</code> have no defaults — every item must be
+          created with all three.</p>
+          <div class="tbl-scroll">
+            <table class="params">
+              <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+              <tr><td class="pname">item_id</td><td class="ptype">str</td><td>Unique key, e.g. <code>"dagger_001"</code>.</td></tr>
+              <tr><td class="pname">name</td><td class="ptype">str</td><td>Required, non-empty.</td></tr>
+              <tr><td class="pname">type</td><td class="ptype">str</td><td>Required, non-empty. The material/quality prefix, e.g. <code>"Iron"</code>, <code>"Silver"</code>, <code>"Rune"</code>, <code>"Ethereal"</code>.</td></tr>
+              <tr><td class="pname">category</td><td class="ptype">str</td><td>Required. One of <code>Weapon</code>, <code>Armor</code>, <code>Clothing</code>, <code>Jewelry</code>, <code>Food</code>, <code>Drink</code>, <code>Tool</code>.</td></tr>
+              <tr><td class="pname">rarity</td><td class="ptype">str</td><td>Required. One of <code>Common</code>, <code>Uncommon</code>, <code>Rare</code>, <code>Unique</code>.</td></tr>
+              <tr><td class="pname">value</td><td class="ptype">int | float</td><td>Sell/score value; free-form for your engine.</td></tr>
+              <tr><td class="pname">weight</td><td class="ptype">int | float</td><td>Carry weight; free-form for your engine.</td></tr>
+              <tr><td class="pname">owner</td><td class="ptype">str | None</td><td>The only field that may be <code>None</code> — and only when <code>rarity</code> isn't <code>Unique</code>. Unique items must be created with an explicit owner.</td></tr>
+            </table>
+          </div>
+          <p class="returns-line"><span class="tag">Returns</span><code>Warnings</code> &mdash; recomputed across the whole file, since a new item can resolve loot references that were dangling before.</p>
+          <p class="raises-line"><span class="tag">Raises</span><code>ValidationError</code> on a duplicate id, a missing name/type, an invalid <code>category</code>/<code>rarity</code>, a <code>Unique</code> item with no <code>owner</code>, a non-string <code>owner</code>, or a non-numeric <code>value</code>/<code>weight</code>.</p>
+        </div>
+      </div>
+
+      <ul class="fn-list">
+        <li><code>update_item(item_id, **fields)</code> <span class="desc">Partial update, same merge-then-validate pattern.</span></li>
+        <li><code>delete_item(item_id, force=False)</code> <span class="desc">Blocked if a location still lists it as loot — pass <code>force=True</code> to override.</span></li>
+        <li><code>get_item(item_id)</code> <span class="desc">Returns the record, or <code>None</code>.</span></li>
+        <li><code>list_items()</code> <span class="desc">Returns the full <code>{id: record}</code> dict.</span></li>
+      </ul>
+
+      <div class="note">
+        <span class="note-tag">Forward references are allowed on purpose</span>
+        <p>
+          An exit that points at a location you haven't built yet, or loot that names an item
+          you haven't stocked yet, is <em>not</em> rejected. It's normal to sketch a map before
+          filling it in. Every create/update call returns a <code>Warnings</code> object
+          listing what's still dangling — check <code>.messages</code>, or call
+          <code>check_dangling_references()</code> any time to re-scan the whole file.
+        </p>
+      </div>
+    </section>
+
+    <section id="areas">
+      <div class="eyebrow">src/utils/world_data.py &middot; the area field</div>
+      <h2>Multi-tile areas</h2>
+      <p class="section-intro">
+        A twelve-tile courtyard isn't one record with a list of tiles inside it — it's twelve
+        ordinary locations that happen to share an <code>area</code> tag. Each tile keeps its own
+        exits, so walking from one flagstone to the next inside the courtyard works exactly like
+        walking between any other two locations.
+      </p>
+
+      <div class="note safety">
+        <span class="note-tag">Id convention</span>
+        <p>
+          There's no separate local grid for tiles inside an area — <code>x</code>/<code>y</code>
+          stay the single global coordinate system already on every location. The convention is
+          to fold the area name and global coordinate into the id itself:
+        </p>
+        <div class="code-block" style="margin-top: 0.75rem;">
+          <pre><code data-lang="python">f"{area}_{x}_{y}"   # -&gt; "castle_courtyard_12_7"</code></pre>
+        </div>
+        <p>
+          That makes a neighboring tile's id computable instead of guessed, and reads as a
+          position at a glance instead of an opaque counter like <code>castle_courtyard_014</code>.
+          Put the human-facing label in <code>name</code> instead — <code>id</code> stays
+          mechanical.
+        </p>
+      </div>
+
+      <p>Two courtyard tiles, connected to each other:</p>
+      <div class="two-up">
+        <div class="code-block">
+          <div class="code-label"><span>python</span></div>
+          <pre><code data-lang="python">world_data.create_location(
+    "castle_courtyard_0_0",
+    name="Castle Courtyard — Northwest Corner",
+    x=0, y=0,
+    area="castle_courtyard",
+    exits={"east": "castle_courtyard_1_0"},
+)
+world_data.create_location(
+    "castle_courtyard_1_0",
+    name="Castle Courtyard — Fountain",
+    x=1, y=0,
+    area="castle_courtyard",
+    exits={"west": "castle_courtyard_0_0"},
+)
+
+world_data.list_locations_by_area("castle_courtyard")
+# -> {"castle_courtyard_0_0": {...}, "castle_courtyard_1_0": {...}}</code></pre>
+        </div>
+        <div class="code-block">
+          <div class="code-label"><span>cli</span></div>
+          <pre><code data-lang="bash">python3 -m src.utils.cli location create \
+  --id castle_courtyard_0_0 \
+  --name "Castle Courtyard — Northwest Corner" \
+  --x 0 --y 0 --area castle_courtyard \
+  --exit east=castle_courtyard_1_0
+
+python3 -m src.utils.cli location create \
+  --id castle_courtyard_1_0 \
+  --name "Castle Courtyard — Fountain" \
+  --x 1 --y 0 --area castle_courtyard \
+  --exit west=castle_courtyard_0_0
+
+python3 -m src.utils.cli location list --area castle_courtyard</code></pre>
+        </div>
+      </div>
+
+      <p>Placing a thirteenth tile on a coordinate already in use is rejected, not silently overwritten:</p>
+      <div class="code-block">
+        <div class="code-label"><span>python</span></div>
+        <pre><code data-lang="python">world_data.create_location("oops", name="Oops", x=0, y=0)
+# ValidationError: Location 'oops' shares coordinates (0, 0)
+# with existing location 'castle_courtyard_0_0'.</code></pre>
+      </div>
+    </section>
+
+    <section id="npcs">
+      <div class="eyebrow">src/utils/npc_data.py &middot; data/npcs.json</div>
+      <h2>NPCs</h2>
+      <p class="section-intro">
+        NPCs are placed by <code>location_id</code>. Placement is optional — an NPC with
+        <code>location_id=None</code> exists in the roster but isn't standing anywhere yet.
+      </p>
+
+      <div class="fn">
+        <div class="fn-sig">create_npc(<span class="arg">npc_id, name, description="", location_id=None, dialogue=None, friendly=True</span>)</div>
+        <div class="fn-body">
+          <div class="tbl-scroll">
+            <table class="params">
+              <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+              <tr><td class="pname">npc_id</td><td class="ptype">str</td><td>Unique key, e.g. <code>"keep_warden"</code>.</td></tr>
+              <tr><td class="pname">name</td><td class="ptype">str</td><td>Required, non-empty.</td></tr>
+              <tr><td class="pname">location_id</td><td class="ptype">str | None</td><td>Where they're standing; <code>None</code> if unplaced.</td></tr>
+              <tr><td class="pname">dialogue</td><td class="ptype">list[str]</td><td>Lines, in whatever order your engine reads them.</td></tr>
+              <tr><td class="pname">friendly</td><td class="ptype">bool</td><td>Defaults to <code>True</code>.</td></tr>
+            </table>
+          </div>
+          <p class="returns-line"><span class="tag">Returns</span><code>Warnings</code> &mdash; a non-null <code>location_id</code> that doesn't match an existing location.</p>
+          <p class="raises-line"><span class="tag">Raises</span><code>ValidationError</code> on a duplicate id, a missing name, or a wrong-typed <code>location_id</code> / <code>dialogue</code> / <code>friendly</code>.</p>
+        </div>
+      </div>
+
+      <ul class="fn-list">
+        <li><code>update_npc(npc_id, **fields)</code> <span class="desc">Partial update, merge-then-validate.</span></li>
+        <li><code>delete_npc(npc_id)</code> <span class="desc">No reference protection — nothing else points at an NPC by id.</span></li>
+        <li><code>get_npc(npc_id)</code> <span class="desc">Returns the record, or <code>None</code>.</span></li>
+        <li><code>list_npcs()</code> <span class="desc">Returns the full <code>{id: record}</code> dict.</span></li>
+      </ul>
+    </section>
+
+    <section id="triggers">
+      <div class="eyebrow">src/utils/trigger_data.py &middot; data/triggers.json</div>
+      <h2>Triggers</h2>
+      <p class="section-intro">
+        A trigger is an envelope, not a scripting language. <code>condition</code> and
+        <code>action</code> are free-form dicts — this module only checks that they're dicts and
+        leaves the keys inside them to whatever engine code eventually reads them.
+      </p>
+
+      <div class="fn">
+        <div class="fn-sig">create_trigger(<span class="arg">trigger_id, type, location_id=None, condition=None, action=None, repeatable=False</span>)</div>
+        <div class="fn-body">
+          <div class="tbl-scroll">
+            <table class="params">
+              <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+              <tr><td class="pname">trigger_id</td><td class="ptype">str</td><td>Unique key.</td></tr>
+              <tr><td class="pname">type</td><td class="ptype">str</td><td>e.g. <code>"on_enter"</code>, <code>"on_talk"</code>, <code>"on_item_pickup"</code>. Required, non-empty.</td></tr>
+              <tr><td class="pname">location_id</td><td class="ptype">str | None</td><td>Where it fires, if location-bound.</td></tr>
+              <tr><td class="pname">condition</td><td class="ptype">dict</td><td>Free-form; interpreted by your engine.</td></tr>
+              <tr><td class="pname">action</td><td class="ptype">dict</td><td>Free-form; interpreted by your engine.</td></tr>
+              <tr><td class="pname">repeatable</td><td class="ptype">bool</td><td>Whether it can fire more than once.</td></tr>
+            </table>
+          </div>
+          <p class="returns-line"><span class="tag">Returns</span><code>Warnings</code> &mdash; a non-null <code>location_id</code> that doesn't exist yet.</p>
+          <p class="raises-line"><span class="tag">Raises</span><code>ValidationError</code> on a duplicate id, a missing/non-string <code>type</code>, a non-string <code>location_id</code>, a non-dict <code>condition</code>/<code>action</code>, or a non-bool <code>repeatable</code>.</p>
+        </div>
+      </div>
+
+      <ul class="fn-list">
+        <li><code>update_trigger(trigger_id, **fields)</code> <span class="desc">Partial update, merge-then-validate.</span></li>
+        <li><code>delete_trigger(trigger_id)</code> <span class="desc">No reference protection.</span></li>
+        <li><code>get_trigger(trigger_id)</code> <span class="desc">Returns the record, or <code>None</code>.</span></li>
+        <li><code>list_triggers()</code> <span class="desc">Returns the full <code>{id: record}</code> dict.</span></li>
+      </ul>
+    </section>
+
+    <section id="cli">
+      <div class="eyebrow">src/utils/cli.py</div>
+      <h2>CLI reference</h2>
+      <p class="section-intro">
+        A thin argparse layer over the four modules above, so you can build the world from a
+        terminal without opening a Python shell. Every entity supports the same five verbs.
+      </p>
+
+      <div class="code-block">
+        <div class="code-label"><span>shape of every command</span></div>
+        <pre><code data-lang="bash">python -m src.utils.cli &lt;location|item|npc|trigger&gt; &lt;create|update|delete|get|list&gt; [flags]</code></pre>
+      </div>
+
+      <ul class="fn-list">
+        <li><code>location create/update</code> <span class="desc"><code>--id --name --description --x --y --area --exit DIR=ID --loot ITEM_ID</code> &nbsp;(repeat <code>--exit</code>/<code>--loot</code>; update adds <code>--clear-exits</code>/<code>--clear-loot</code>)</span></li>
+        <li><code>location delete</code> <span class="desc"><code>--id</code> &nbsp;(<code>--force</code> to override reference protection)</span></li>
+        <li><code>location list</code> <span class="desc"><code>--area ID</code> &nbsp;optional — narrows the listing to one area's tiles</span></li>
+        <li><code>item create/update</code> <span class="desc"><code>--id --name --type --category --rarity --description --value --weight --owner</code> &nbsp;(<code>--category</code>/<code>--rarity</code> are restricted to the valid sets; update only: <code>--clear-owner</code>)</span></li>
+        <li><code>item delete</code> <span class="desc"><code>--id</code> &nbsp;(<code>--force</code> to override)</span></li>
+        <li><code>npc create/update</code> <span class="desc"><code>--id --name --description --location ID --dialogue LINE --hostile</code> &nbsp;(update only: <code>--friendly</code> to flip back, <code>--clear-location</code>)</span></li>
+        <li><code>trigger create/update</code> <span class="desc"><code>--id --type --location ID --condition JSON --action JSON --repeatable</code> &nbsp;(update only: <code>--not-repeatable</code>, <code>--clear-location</code>)</span></li>
+        <li><code>&lt;entity&gt; get / list</code> <span class="desc"><code>get --id ...</code> prints one record; <code>list</code> prints the whole collection &mdash; both as JSON.</span></li>
+      </ul>
+
+      <div class="note">
+        <span class="note-tag">Exit codes</span>
+        <p>
+          Success prints a confirmation line (plus any warnings, to stderr) and exits 0. A
+          <code>ValidationError</code> &mdash; duplicate id, bad field, blocked delete &mdash;
+          prints <code>error: ...</code> to stderr and exits 1, so it's safe to chain commands in
+          a script and check <code>$?</code>.
+        </p>
+      </div>
+    </section>
+
+    <section id="walkthrough">
+      <div class="eyebrow">worked example</div>
+      <h2>Toy example: the Sunken Keep</h2>
+      <p class="section-intro">
+        A two-room map with a key, a warden, and a trigger that hands over the key — built two
+        ways: as calls against the Python modules, and as the equivalent CLI invocations. Either
+        column produces the same three JSON files.
+      </p>
+
+      <div class="step">
+        <div class="step-head">
+          <span class="step-mark">i.</span>
+          <h4>Sketch the courtyard with an exit that doesn't exist yet</h4>
+        </div>
+        <p>
+          Real design work is nonlinear — you know the armory is north of the courtyard before
+          you've written the armory. Create the courtyard anyway; the warning is just a note to
+          come back.
+        </p>
+        <div class="two-up">
+          <div class="code-block">
+            <div class="code-label"><span>python</span></div>
+            <pre><code data-lang="python">from src.utils import world_data
+
+warnings = world_data.create_location(
+    "courtyard",
+    name="Sunken Courtyard",
+    description="Rain pools between cracked flagstones.",
+    exits={"north": "armory"},
+)
+print(warnings.messages)
+# ["Location 'courtyard' exit 'north' -> unknown location 'armory'."]</code></pre>
+          </div>
+          <div class="code-block">
+            <div class="code-label"><span>cli</span></div>
+            <pre><code data-lang="bash">python3 -m src.utils.cli location create \
+  --id courtyard \
+  --name "Sunken Courtyard" \
+  --description "Rain pools between cracked flagstones." \
+  --exit north=armory</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-head">
+          <span class="step-mark">ii.</span>
+          <h4>Build the armory, resolving the exit</h4>
+        </div>
+        <div class="two-up">
+          <div class="code-block">
+            <div class="code-label"><span>python</span></div>
+            <pre><code data-lang="python">world_data.create_location(
+    "armory",
+    name="Old Armory",
+    description="Racks of rusted spears.",
+    exits={"south": "courtyard"},
+    loot=["rusty_key"],  # item doesn't exist yet either
+)</code></pre>
+          </div>
+          <div class="code-block">
+            <div class="code-label"><span>cli</span></div>
+            <pre><code data-lang="bash">python3 -m src.utils.cli location create \
+  --id armory \
+  --name "Old Armory" \
+  --description "Racks of rusted spears." \
+  --exit south=courtyard \
+  --loot rusty_key</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-head">
+          <span class="step-mark">iii.</span>
+          <h4>Add the key, place the warden, wire the trigger</h4>
+        </div>
+        <div class="two-up">
+          <div class="code-block">
+            <div class="code-label"><span>python</span></div>
+            <pre><code data-lang="python">from src.utils import npc_data, trigger_data
+
+world_data.create_item(
+    "rusty_key", name="Rusty Key",
+    type="Iron", category="Tool", rarity="Common", value=0,
+)
+
+npc_data.create_npc(
+    "keep_warden",
+    name="The Keep Warden",
+    location_id="courtyard",
+    dialogue=["The armory's locked. Has been for years."],
+)
+
+trigger_data.create_trigger(
+    "warden_grants_key",
+    type="on_talk",
+    location_id="courtyard",
+    condition={"npc": "keep_warden"},
+    action={"give_item": "rusty_key"},
+    repeatable=False,
+)</code></pre>
+          </div>
+          <div class="code-block">
+            <div class="code-label"><span>cli</span></div>
+            <pre><code data-lang="bash">python3 -m src.utils.cli item create \
+  --id rusty_key --name "Rusty Key" \
+  --type Iron --category Tool --rarity Common --value 0
+
+python3 -m src.utils.cli npc create \
+  --id keep_warden --name "The Keep Warden" \
+  --location courtyard \
+  --dialogue "The armory's locked. Has been for years."
+
+python3 -m src.utils.cli trigger create \
+  --id warden_grants_key --type on_talk \
+  --location courtyard \
+  --condition '{"npc": "keep_warden"}' \
+  --action '{"give_item": "rusty_key"}'</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-head">
+          <span class="step-mark">iv.</span>
+          <h4>Confirm nothing is left dangling</h4>
+        </div>
+        <p>Every id now resolves, so a fresh scan comes back clean:</p>
+        <div class="code-block">
+          <div class="code-label"><span>python</span></div>
+          <pre><code data-lang="python">assert world_data.check_dangling_references().messages == []</code></pre>
+        </div>
+        <p>...or from the terminal:</p>
+        <div class="code-block">
+          <div class="code-label"><span>cli</span></div>
+          <pre><code data-lang="bash">python3 -m src.utils.cli location get --id courtyard</code></pre>
+        </div>
+        <div class="code-block">
+          <div class="code-label"><span>data/world.json (excerpt)</span></div>
+          <pre><code data-lang="json">{
+  "courtyard": {
+    "name": "Sunken Courtyard",
+    "description": "Rain pools between cracked flagstones.",
+    "x": null,
+    "y": null,
+    "exits": { "north": "armory" },
+    "loot": []
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing">
+      <div class="eyebrow">tests/</div>
+      <h2>Testing during development</h2>
+      <p class="section-intro">
+        The suite runs against a throwaway directory, never the real <code>data/</code> folder,
+        so you can write a test the same afternoon you write the feature without any cleanup
+        step.
+      </p>
+
+      <div class="code-block">
+        <div class="code-label"><span>tests/conftest.py</span></div>
+        <pre><code data-lang="python">import pytest
+from src.utils import npc_data, storage, trigger_data, world_data
+
+@pytest.fixture(autouse=True)
+def isolated_data_dir(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    monkeypatch.setattr(storage, "DATA_DIR", data_dir)
+    monkeypatch.setattr(storage, "BACKUP_DIR", data_dir / ".backups")
+    monkeypatch.setattr(world_data, "WORLD_PATH", data_dir / "world.json")
+    monkeypatch.setattr(npc_data, "NPCS_PATH", data_dir / "npcs.json")
+    monkeypatch.setattr(trigger_data, "TRIGGERS_PATH", data_dir / "triggers.json")
+    yield data_dir</code></pre>
+      </div>
+
+      <p>
+        Because it's <code>autouse</code>, every test below gets a clean, empty data directory
+        without asking for it by name. The delete-protection behavior used above is covered in
+        <code>tests/test_world_data.py</code>:
+      </p>
+
+      <div class="code-block">
+        <div class="code-label"><span>tests/test_world_data.py</span></div>
+        <pre><code data-lang="python">import pytest
+
+from src.utils import world_data
+from src.utils.storage import ValidationError
+
+def test_delete_location_blocked_when_referenced_by_another_exit():
+    world_data.create_location("forest_1", name="Dark Forest", exits={"north": "forest_2"})
+    world_data.create_location("forest_2", name="Deeper Forest", exits={"south": "forest_1"})
+    with pytest.raises(ValidationError):
+        world_data.delete_location("forest_2")
+    # Still there -- the blocked delete must not have partially applied.
+    assert world_data.get_location("forest_2") is not None
+
+def test_delete_location_force_overrides_reference_protection():
+    world_data.create_location("forest_1", name="Dark Forest", exits={"north": "forest_2"})
+    world_data.create_location("forest_2", name="Deeper Forest", exits={"south": "forest_1"})
+    world_data.delete_location("forest_2", force=True)
+    assert world_data.get_location("forest_2") is None</code></pre>
+      </div>
+
+      <div class="note safety">
+        <span class="note-tag">Run it</span>
+        <p>From the project root, with the virtualenv active:</p>
+        <div class="code-block" style="margin-top: 0.75rem;">
+          <pre><code data-lang="bash">python -m pytest -q</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <span class="mono">src/utils/{storage,world_data,npc_data,trigger_data,cli}.py</span> &middot; keep this page next to the source, not instead of it.
+</footer>
+
+<script>
+(function () {
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function buildHighlighter(rules) {
+    var pattern = new RegExp(rules.map(function (r) { return "(" + r.re.source + ")"; }).join("|"), "g");
+    return function (code) {
+      var out = "";
+      var lastIndex = 0;
+      var m;
+      pattern.lastIndex = 0;
+      while ((m = pattern.exec(code))) {
+        out += esc(code.slice(lastIndex, m.index));
+        var groupIndex = -1;
+        for (var i = 1; i < m.length; i++) {
+          if (m[i] !== undefined) { groupIndex = i - 1; break; }
+        }
+        var rule = rules[groupIndex];
+        out += '<span class="tok-' + rule.type + '">' + esc(m[0]) + "</span>";
+        lastIndex = m.index + m[0].length;
+        if (m[0].length === 0) pattern.lastIndex++;
+      }
+      out += esc(code.slice(lastIndex));
+      return out;
+    };
+  }
+
+  var highlighters = {
+    python: buildHighlighter([
+      { type: "comment", re: /#[^\n]*/ },
+      { type: "string", re: /"""[\s\S]*?"""|'''[\s\S]*?'''|"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*'/ },
+      { type: "keyword", re: /\b(?:def|class|return|import|from|as|if|elif|else|for|while|in|not|and|or|is|None|True|False|raise|try|except|with|pass|yield|lambda|assert)\b/ },
+      { type: "number", re: /\b\d+(?:\.\d+)?\b/ },
+      { type: "func", re: /\b[a-zA-Z_][a-zA-Z0-9_]*(?=\()/ },
+    ]),
+    bash: buildHighlighter([
+      { type: "comment", re: /#[^\n]*/ },
+      { type: "string", re: /"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'/ },
+      { type: "cmd", re: /\b(?:python3|python|pytest)\b/ },
+      { type: "flag", re: /(?<!\S)--?[a-zA-Z][\w-]*/ },
+    ]),
+    json: buildHighlighter([
+      { type: "key", re: /"(?:[^"\\]|\\.)*"(?=\s*:)/ },
+      { type: "string", re: /"(?:[^"\\]|\\.)*"/ },
+      { type: "number", re: /-?\b\d+(?:\.\d+)?\b/ },
+      { type: "keyword", re: /\b(?:true|false|null)\b/ },
+    ]),
+  };
+
+  document.querySelectorAll("code[data-lang]").forEach(function (el) {
+    var lang = el.getAttribute("data-lang");
+    var fn = highlighters[lang];
+    if (!fn) return;
+    el.innerHTML = fn(el.textContent);
+  });
+})();
+</script>
+
+</body></html>

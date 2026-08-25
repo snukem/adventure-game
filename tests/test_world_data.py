@@ -90,7 +90,7 @@ def test_create_location_warns_on_dangling_loot():
 
 def test_create_location_no_warnings_when_references_resolve():
     world_data.create_location("forest_2", name="Deeper Forest")
-    world_data.create_item("sword", name="Sword")
+    world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Common")
     warnings = world_data.create_location(
         "forest_1", name="Dark Forest", exits={"north": "forest_2"}, loot=["sword"]
     )
@@ -152,31 +152,68 @@ def test_list_locations_returns_all():
 # ---- items / loot -----------------------------------------------------------
 
 def test_create_item_persists_and_is_retrievable():
-    world_data.create_item("sword", name="Sword", value=10, tags=["weapon"])
+    world_data.create_item(
+        "sword", name="Sword", type="Iron", category="Weapon", rarity="Common", value=10, weight=4
+    )
     item = world_data.get_item("sword")
     assert item["name"] == "Sword"
     assert item["value"] == 10
-    assert item["tags"] == ["weapon"]
+    assert item["weight"] == 4
+    assert item["type"] == "Iron"
+    assert item["category"] == "Weapon"
+    assert item["rarity"] == "Common"
+    assert item["owner"] is None
 
 
 def test_create_item_duplicate_id_raises():
-    world_data.create_item("sword", name="Sword")
+    world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Common")
     with pytest.raises(ValidationError):
-        world_data.create_item("sword", name="Another Sword")
+        world_data.create_item("sword", name="Another Sword", type="Iron", category="Weapon", rarity="Common")
 
 
 def test_create_item_requires_name():
     with pytest.raises(ValidationError):
-        world_data.create_item("sword", name="")
+        world_data.create_item("sword", name="", type="Iron", category="Weapon", rarity="Common")
+
+
+def test_create_item_rejects_invalid_category():
+    with pytest.raises(ValidationError):
+        world_data.create_item("sword", name="Sword", type="Iron", category="Nonsense", rarity="Common")
+
+
+def test_create_item_rejects_invalid_rarity():
+    with pytest.raises(ValidationError):
+        world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Legendary")
+
+
+def test_create_item_unique_requires_owner():
+    with pytest.raises(ValidationError):
+        world_data.create_item("sword", name="Sword", type="Ethereal", category="Weapon", rarity="Unique")
+
+
+def test_create_item_unique_with_owner_succeeds():
+    world_data.create_item(
+        "sword", name="Sword", type="Ethereal", category="Weapon", rarity="Unique", owner="Sir Mortimer"
+    )
+    assert world_data.get_item("sword")["owner"] == "Sir Mortimer"
 
 
 def test_create_item_rejects_non_numeric_value():
     with pytest.raises(ValidationError):
-        world_data.create_item("sword", name="Sword", value="a lot")
+        world_data.create_item(
+            "sword", name="Sword", type="Iron", category="Weapon", rarity="Common", value="a lot"
+        )
+
+
+def test_create_item_rejects_non_numeric_weight():
+    with pytest.raises(ValidationError):
+        world_data.create_item(
+            "sword", name="Sword", type="Iron", category="Weapon", rarity="Common", weight="heavy"
+        )
 
 
 def test_update_item_merges_fields():
-    world_data.create_item("sword", name="Sword", value=10)
+    world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Common", value=10)
     world_data.update_item("sword", value=15)
     item = world_data.get_item("sword")
     assert item["name"] == "Sword"
@@ -189,13 +226,13 @@ def test_update_item_nonexistent_raises():
 
 
 def test_delete_item_removes_it():
-    world_data.create_item("sword", name="Sword")
+    world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Common")
     world_data.delete_item("sword")
     assert world_data.get_item("sword") is None
 
 
 def test_delete_item_blocked_when_referenced_as_loot():
-    world_data.create_item("sword", name="Sword")
+    world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Common")
     world_data.create_location("forest_1", name="Dark Forest", loot=["sword"])
     with pytest.raises(ValidationError):
         world_data.delete_item("sword")
@@ -203,15 +240,15 @@ def test_delete_item_blocked_when_referenced_as_loot():
 
 
 def test_delete_item_force_overrides_reference_protection():
-    world_data.create_item("sword", name="Sword")
+    world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Common")
     world_data.create_location("forest_1", name="Dark Forest", loot=["sword"])
     world_data.delete_item("sword", force=True)
     assert world_data.get_item("sword") is None
 
 
 def test_list_items_returns_all():
-    world_data.create_item("sword", name="Sword")
-    world_data.create_item("shield", name="Shield")
+    world_data.create_item("sword", name="Sword", type="Iron", category="Weapon", rarity="Common")
+    world_data.create_item("shield", name="Shield", type="Leather", category="Armor", rarity="Common")
     assert set(world_data.list_items().keys()) == {"sword", "shield"}
 
 

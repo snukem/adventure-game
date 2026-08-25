@@ -1,0 +1,808 @@
+{
+  "items": {
+    "ale_001": {
+      "category": "Drink",
+      "description": "",
+      "name": "Ale",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Watered-Down",
+      "value": 1,
+      "weight": 1
+    },
+    "ale_002": {
+      "category": "Drink",
+      "description": "",
+      "name": "Ale",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fine",
+      "value": 3,
+      "weight": 1
+    },
+    "ale_003": {
+      "category": "Drink",
+      "description": "",
+      "name": "Ale",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Vintage",
+      "value": 10,
+      "weight": 1
+    },
+    "amulet_001": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Amulet",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Copper",
+      "value": 10,
+      "weight": 0
+    },
+    "amulet_002": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Amulet",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 35,
+      "weight": 0
+    },
+    "amulet_003": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Amulet",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gold",
+      "value": 120,
+      "weight": 0
+    },
+    "armor_001": {
+      "category": "Armor",
+      "description": "",
+      "name": "Armor",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Leather",
+      "value": 5,
+      "weight": 5
+    },
+    "armor_002": {
+      "category": "Armor",
+      "description": "",
+      "name": "Armor",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 10,
+      "weight": 10
+    },
+    "armor_003": {
+      "category": "Armor",
+      "description": "",
+      "name": "Armor",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Rune",
+      "value": 40,
+      "weight": 20
+    },
+    "armor_004": {
+      "category": "Armor",
+      "description": "",
+      "name": "Armor",
+      "owner": "Cal'ad Feyn",
+      "rarity": "Unique",
+      "type": "Ethereal",
+      "value": 500,
+      "weight": 0
+    },
+    "armor_005": {
+      "category": "Armor",
+      "description": "",
+      "name": "Helmet",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Leather",
+      "value": 2,
+      "weight": 1
+    },
+    "armor_006": {
+      "category": "Armor",
+      "description": "",
+      "name": "Helmet",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 5,
+      "weight": 2
+    },
+    "armor_007": {
+      "category": "Armor",
+      "description": "",
+      "name": "Helmet",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Rune",
+      "value": 20,
+      "weight": 5
+    },
+    "armor_008": {
+      "category": "Armor",
+      "description": "",
+      "name": "Helmet",
+      "owner": "Deng",
+      "rarity": "Unique",
+      "type": "Ethereal",
+      "value": 250,
+      "weight": 0
+    },
+    "armor_009": {
+      "category": "Armor",
+      "description": "",
+      "name": "Shield",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Leather",
+      "value": 3,
+      "weight": 3
+    },
+    "armor_010": {
+      "category": "Armor",
+      "description": "",
+      "name": "Shield",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 10,
+      "weight": 5
+    },
+    "armor_011": {
+      "category": "Armor",
+      "description": "",
+      "name": "Shield",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Rune",
+      "value": 30,
+      "weight": 15
+    },
+    "armor_012": {
+      "category": "Armor",
+      "description": "",
+      "name": "Shield",
+      "owner": "Master Clint",
+      "rarity": "Unique",
+      "type": "Ethereal",
+      "value": 400,
+      "weight": 0
+    },
+    "axe_001": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Axe",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Iron",
+      "value": 5,
+      "weight": 6
+    },
+    "axe_002": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Axe",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 15,
+      "weight": 6
+    },
+    "axe_003": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Axe",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Rune",
+      "value": 45,
+      "weight": 7
+    },
+    "bow_001": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Bow",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Ash",
+      "value": 3,
+      "weight": 2
+    },
+    "bow_002": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Bow",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Yew",
+      "value": 10,
+      "weight": 2
+    },
+    "bow_003": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Bow",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Runic",
+      "value": 35,
+      "weight": 3
+    },
+    "bracelet_001": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Bracelet",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Copper",
+      "value": 6,
+      "weight": 0
+    },
+    "bracelet_002": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Bracelet",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 25,
+      "weight": 0
+    },
+    "bracelet_003": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Bracelet",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gold",
+      "value": 85,
+      "weight": 0
+    },
+    "bread_001": {
+      "category": "Food",
+      "description": "",
+      "name": "Bread",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Stale",
+      "value": 1,
+      "weight": 1
+    },
+    "bread_002": {
+      "category": "Food",
+      "description": "",
+      "name": "Bread",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fresh",
+      "value": 3,
+      "weight": 1
+    },
+    "bread_003": {
+      "category": "Food",
+      "description": "",
+      "name": "Bread",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gourmet",
+      "value": 8,
+      "weight": 1
+    },
+    "cheese_001": {
+      "category": "Food",
+      "description": "",
+      "name": "Cheese",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Stale",
+      "value": 2,
+      "weight": 1
+    },
+    "cheese_002": {
+      "category": "Food",
+      "description": "",
+      "name": "Cheese",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fresh",
+      "value": 5,
+      "weight": 1
+    },
+    "cheese_003": {
+      "category": "Food",
+      "description": "",
+      "name": "Cheese",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gourmet",
+      "value": 12,
+      "weight": 1
+    },
+    "cider_001": {
+      "category": "Drink",
+      "description": "",
+      "name": "Cider",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Watered-Down",
+      "value": 1,
+      "weight": 1
+    },
+    "cider_002": {
+      "category": "Drink",
+      "description": "",
+      "name": "Cider",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fine",
+      "value": 4,
+      "weight": 1
+    },
+    "cider_003": {
+      "category": "Drink",
+      "description": "",
+      "name": "Cider",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Vintage",
+      "value": 12,
+      "weight": 1
+    },
+    "clothing_001": {
+      "category": "Clothing",
+      "description": "",
+      "name": "Clothing",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Rough",
+      "value": 1,
+      "weight": 2
+    },
+    "clothing_002": {
+      "category": "Clothing",
+      "description": "",
+      "name": "Clothing",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fine",
+      "value": 10,
+      "weight": 3
+    },
+    "clothing_003": {
+      "category": "Clothing",
+      "description": "",
+      "name": "Clothing",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Exquisite",
+      "value": 50,
+      "weight": 3
+    },
+    "dagger_001": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Dagger",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Iron",
+      "value": 1,
+      "weight": 1
+    },
+    "dagger_002": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Dagger",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 3,
+      "weight": 1
+    },
+    "dagger_003": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Dagger",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Rune",
+      "value": 10,
+      "weight": 2
+    },
+    "dagger_004": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Dagger",
+      "owner": "Sir Mortimer",
+      "rarity": "Unique",
+      "type": "Ethereal",
+      "value": 100,
+      "weight": 0
+    },
+    "lockpick_001": {
+      "category": "Tool",
+      "description": "",
+      "name": "Lockpick",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Worn",
+      "value": 2,
+      "weight": 0
+    },
+    "lockpick_002": {
+      "category": "Tool",
+      "description": "",
+      "name": "Lockpick",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Sturdy",
+      "value": 6,
+      "weight": 0
+    },
+    "lockpick_003": {
+      "category": "Tool",
+      "description": "",
+      "name": "Lockpick",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Masterwork",
+      "value": 18,
+      "weight": 0
+    },
+    "mace_001": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Mace",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Iron",
+      "value": 4,
+      "weight": 5
+    },
+    "mace_002": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Mace",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 13,
+      "weight": 5
+    },
+    "mace_003": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Mace",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Rune",
+      "value": 42,
+      "weight": 6
+    },
+    "mead_001": {
+      "category": "Drink",
+      "description": "",
+      "name": "Mead",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Watered-Down",
+      "value": 2,
+      "weight": 1
+    },
+    "mead_002": {
+      "category": "Drink",
+      "description": "",
+      "name": "Mead",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fine",
+      "value": 5,
+      "weight": 1
+    },
+    "mead_003": {
+      "category": "Drink",
+      "description": "",
+      "name": "Mead",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Vintage",
+      "value": 18,
+      "weight": 1
+    },
+    "meat_pie_001": {
+      "category": "Food",
+      "description": "",
+      "name": "Meat Pie",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Stale",
+      "value": 3,
+      "weight": 1
+    },
+    "meat_pie_002": {
+      "category": "Food",
+      "description": "",
+      "name": "Meat Pie",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fresh",
+      "value": 8,
+      "weight": 1
+    },
+    "meat_pie_003": {
+      "category": "Food",
+      "description": "",
+      "name": "Meat Pie",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gourmet",
+      "value": 18,
+      "weight": 1
+    },
+    "necklace_001": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Necklace",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Copper",
+      "value": 8,
+      "weight": 0
+    },
+    "necklace_002": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Necklace",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 30,
+      "weight": 0
+    },
+    "necklace_003": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Necklace",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gold",
+      "value": 100,
+      "weight": 0
+    },
+    "ring_001": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Ring",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Copper",
+      "value": 5,
+      "weight": 0
+    },
+    "ring_002": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Ring",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 20,
+      "weight": 0
+    },
+    "ring_003": {
+      "category": "Jewelry",
+      "description": "",
+      "name": "Ring",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gold",
+      "value": 75,
+      "weight": 0
+    },
+    "rope_001": {
+      "category": "Tool",
+      "description": "",
+      "name": "Rope",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Worn",
+      "value": 1,
+      "weight": 2
+    },
+    "rope_002": {
+      "category": "Tool",
+      "description": "",
+      "name": "Rope",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Sturdy",
+      "value": 3,
+      "weight": 2
+    },
+    "rope_003": {
+      "category": "Tool",
+      "description": "",
+      "name": "Rope",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Masterwork",
+      "value": 10,
+      "weight": 2
+    },
+    "shovel_001": {
+      "category": "Tool",
+      "description": "",
+      "name": "Shovel",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Worn",
+      "value": 2,
+      "weight": 4
+    },
+    "shovel_002": {
+      "category": "Tool",
+      "description": "",
+      "name": "Shovel",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Sturdy",
+      "value": 5,
+      "weight": 4
+    },
+    "shovel_003": {
+      "category": "Tool",
+      "description": "",
+      "name": "Shovel",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Masterwork",
+      "value": 15,
+      "weight": 5
+    },
+    "stew_001": {
+      "category": "Food",
+      "description": "",
+      "name": "Stew",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Stale",
+      "value": 2,
+      "weight": 1
+    },
+    "stew_002": {
+      "category": "Food",
+      "description": "",
+      "name": "Stew",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fresh",
+      "value": 6,
+      "weight": 1
+    },
+    "stew_003": {
+      "category": "Food",
+      "description": "",
+      "name": "Stew",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Gourmet",
+      "value": 15,
+      "weight": 1
+    },
+    "sword_001": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Sword",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Iron",
+      "value": 4,
+      "weight": 4
+    },
+    "sword_002": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Sword",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Silver",
+      "value": 12,
+      "weight": 4
+    },
+    "sword_003": {
+      "category": "Weapon",
+      "description": "",
+      "name": "Sword",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Rune",
+      "value": 40,
+      "weight": 5
+    },
+    "torch_001": {
+      "category": "Tool",
+      "description": "",
+      "name": "Torch",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Worn",
+      "value": 1,
+      "weight": 1
+    },
+    "torch_002": {
+      "category": "Tool",
+      "description": "",
+      "name": "Torch",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Sturdy",
+      "value": 2,
+      "weight": 1
+    },
+    "torch_003": {
+      "category": "Tool",
+      "description": "",
+      "name": "Torch",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Masterwork",
+      "value": 6,
+      "weight": 1
+    },
+    "wine_001": {
+      "category": "Drink",
+      "description": "",
+      "name": "Wine",
+      "owner": null,
+      "rarity": "Common",
+      "type": "Watered-Down",
+      "value": 2,
+      "weight": 1
+    },
+    "wine_002": {
+      "category": "Drink",
+      "description": "",
+      "name": "Wine",
+      "owner": null,
+      "rarity": "Uncommon",
+      "type": "Fine",
+      "value": 6,
+      "weight": 1
+    },
+    "wine_003": {
+      "category": "Drink",
+      "description": "",
+      "name": "Wine",
+      "owner": null,
+      "rarity": "Rare",
+      "type": "Vintage",
+      "value": 20,
+      "weight": 1
+    }
+  },
+  "locations": {
+    "Dock": {
+      "area": null,
+      "description": "Waves crash a dozen feet below the creaking wooden beams you stand on. Massive iron nails hold the beams together, and the dock spans out twenty paces in either direction. One side is empty; at the other you see a modest ship, crew packing hurriedly. Behind you the fire rages in town, edging closer to the dock every moment.",
+      "exits": {
+        "east": "ocean",
+        "west": "alistairs_ship"
+      },
+      "loot": [],
+      "name": "Alistair's Dock",
+      "x": null,
+      "y": null
+    }
+  }
+}

@@ -8,7 +8,7 @@ Examples
     python -m src.utils.cli location update --id forest_1 --exit south=forest_0
 
     python -m src.utils.cli item create --id rusty_sword --name "Rusty Sword" \\
-        --value 5 --tag weapon --tag rusty
+        --type Iron --category Weapon --rarity Common --value 5 --weight 4
 
     python -m src.utils.cli npc create --id old_hermit --name "Old Hermit" \\
         --location forest_1 --dialogue "Who dares enter my forest?" --friendly
@@ -129,9 +129,13 @@ def _cmd_item_create(args: argparse.Namespace) -> None:
     warnings = world_data.create_item(
         item_id=args.id,
         name=args.name,
+        type=args.type,
+        category=args.category,
+        rarity=args.rarity,
         description=args.description or "",
         value=args.value or 0,
-        tags=args.tag or [],
+        weight=args.weight or 0,
+        owner=args.owner,
     )
     print(f"Created item '{args.id}'.")
     _print_warnings(warnings)
@@ -143,10 +147,20 @@ def _cmd_item_update(args: argparse.Namespace) -> None:
         fields["name"] = args.name
     if args.description is not None:
         fields["description"] = args.description
+    if args.type is not None:
+        fields["type"] = args.type
+    if args.category is not None:
+        fields["category"] = args.category
+    if args.rarity is not None:
+        fields["rarity"] = args.rarity
     if args.value is not None:
         fields["value"] = args.value
-    if args.tag:
-        fields["tags"] = args.tag
+    if args.weight is not None:
+        fields["weight"] = args.weight
+    if args.owner is not None:
+        fields["owner"] = args.owner
+    if args.clear_owner:
+        fields["owner"] = None
     warnings = world_data.update_item(args.id, **fields)
     print(f"Updated item '{args.id}'.")
     _print_warnings(warnings)
@@ -335,17 +349,26 @@ def build_parser() -> argparse.ArgumentParser:
     p = item_sub.add_parser("create")
     p.add_argument("--id", required=True)
     p.add_argument("--name", required=True)
+    p.add_argument("--type", required=True, help="e.g. 'Iron', 'Silver', 'Rune', 'Ethereal'.")
+    p.add_argument("--category", required=True, choices=sorted(world_data.VALID_ITEM_CATEGORIES))
+    p.add_argument("--rarity", required=True, choices=sorted(world_data.VALID_RARITIES))
     p.add_argument("--description")
     p.add_argument("--value", type=float)
-    p.add_argument("--tag", action="append")
+    p.add_argument("--weight", type=float)
+    p.add_argument("--owner", help="Required if --rarity Unique.")
     p.set_defaults(func=_cmd_item_create)
 
     p = item_sub.add_parser("update")
     p.add_argument("--id", required=True)
     p.add_argument("--name")
+    p.add_argument("--type")
+    p.add_argument("--category", choices=sorted(world_data.VALID_ITEM_CATEGORIES))
+    p.add_argument("--rarity", choices=sorted(world_data.VALID_RARITIES))
     p.add_argument("--description")
     p.add_argument("--value", type=float)
-    p.add_argument("--tag", action="append")
+    p.add_argument("--weight", type=float)
+    p.add_argument("--owner")
+    p.add_argument("--clear-owner", action="store_true")
     p.set_defaults(func=_cmd_item_update)
 
     p = item_sub.add_parser("delete")
